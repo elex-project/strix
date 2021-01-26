@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0-SNAPSHOT"
+version = "1.0.0"
 description = ""//todo
 
 repositories {
@@ -32,12 +32,12 @@ configurations {
 }
 
 tasks.jar {
-	manifest { // todo
+	manifest {
 		attributes(mapOf(
 				"Implementation-Title" to project.name,
 				"Implementation-Version" to project.version,
 				"Implementation-Vendor" to "ELEX co.,pte.",
-				"Automatic-Module-Name" to "com.elex_project.${project.name}"
+				"Automatic-Module-Name" to "com.elex_project.strix"
 		))
 	}
 }
@@ -69,14 +69,9 @@ publishing {
 		create<MavenPublication>("mavenJava") {
 			from(components["java"])
 			pom {
-				// todo
 				name.set(project.name)
 				description.set(project.description)
-				url.set("https://")
-				properties.set(mapOf(
-						"myProp" to "value",
-						"prop.with.dots" to "anotherValue"
-				))
+				url.set("https://www.elex-project.com/")
 				organization {
 					name.set("Elex co.,Pte.")
 					url.set("https://www.elex-project.com/")
@@ -99,21 +94,13 @@ publishing {
 						organizationUrl.set("https://www.elex-project.com/")
 						roles.set(arrayListOf("Developer", "CEO"))
 						timezone.set("Asia/Seoul")
-						properties.set(mapOf("" to ""))
 					}
 				}
-				contributors {
-					contributor {
-						name.set("")
-						email.set("")
-						url.set("")
-					}
-				}
+	
 				scm {
-					// todo
-					connection.set("scm:git:https://github.com/my-library.git")
-					developerConnection.set("scm:git:https://github.com/my-library.git")
-					url.set("https://github.com/my-library/")
+					connection.set("scm:git:https://github.com/elex-project/strix.git")
+					developerConnection.set("scm:git:https://github.com/elex-project/strix.git")
+					url.set("https://github.com/elex-project/strix")
 				}
 			}
 		}
