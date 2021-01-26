@@ -1,7 +1,9 @@
-# tmpl-java-library
+# Project Strix
 
-Template for Java library project
+Socket Server/Client
 
----
+-----
+
 developed by Elex
+
 https://www.elex-project.com
