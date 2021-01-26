@@ -6,8 +6,8 @@ plugins {
 }
 
 group = "com.elex-project"
-version = "1.0.0"
-description = ""//todo
+version = "1.7.0"
+description = "Strix is for Socket Client/Server"
 
 repositories {
 	maven {
@@ -78,10 +78,9 @@ publishing {
 				}
 				licenses {
 					license {
-						// todo
 						name.set("BSD 3-Clause License")
-						url.set("licenseUrl")
-						comments.set("")
+						url.set("https://github.com/elex-project/strix/blob/main/LICENSE")
+						comments.set("BSD 3-Clause License")
 					}
 				}
 				developers {
@@ -118,9 +117,9 @@ publishing {
 				password = project.findProperty("repo.password") as String
 			}
 		}
-		maven { //todo
+		maven {
 			name = "mavenGithub"
-			url = uri("https://maven.pkg.github.com/elex-project/tmpl-java-library")
+			url = uri("https://maven.pkg.github.com/elex-project/strix")
 			credentials {
 				username = project.findProperty("github.username") as String
 				password = project.findProperty("github.token") as String
@@ -130,9 +129,10 @@ publishing {
 }
 
 dependencies {
-	implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 	implementation("org.slf4j:slf4j-api:1.7.30")
 	implementation("org.jetbrains:annotations:20.1.0")
+
+	testImplementation("com.elex-project:abraxas:4.0.3")
 
 	compileOnly("org.projectlombok:lombok:1.18.16")
 	annotationProcessor("org.projectlombok:lombok:1.18.16")
